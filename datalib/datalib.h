@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 11:18:27 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:18:50 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -413,5 +413,99 @@ t_queue	*que_last(t_queue *queue);
  * @param queue	Pointer to the first element of the queue.
  */
 void	que_print(t_queue *queue);
+
+/*********************************** STACK ************************************/
+
+/**
+ * @brief 	Struct for the elements of the stack.
+ * 
+ * @param data	The data to be stored in the element.
+ * @param next	Pointer to the next element in the stack.
+ */
+typedef struct s_stack
+{
+	void			*data;
+	struct s_stack	*next;
+}	t_stack;
+
+/**
+ * @brief	Creates a new element for the stack.
+ *
+ * @param data	The data to store in the element.
+ *
+ * @return	Pointer to the new element.
+ */
+t_stack	*stk_new(void *data);
+
+/**
+ * @brief	Adds an element to the stack.
+ *
+ * @param stack	Pointer to the stack.
+ * @param data 	The data to store in the new element.
+ */
+void	stk_push(t_stack **stack, void *data);
+
+/**
+ * @brief	Extracts the top element from the stack.
+ *
+ * @param stack	Pointer to the stack.
+ *
+ * @return 	Pointer to the top element;
+ * 			NULL if the stack is empty.
+ */
+t_stack	*stk_pop(t_stack **stack);
+
+/**
+ * @brief	Deletes the stack.
+ *
+ * @param stack 	Pointer to the stack.
+ */
+void	stk_clear(t_stack **stack);
+
+/**
+ * @brief	Checks if the stack is empty.
+ *
+ * @param stack	Pointer to the stack.
+ *
+ * @return	1 if the stack is empty;
+ * 			0 otherwise.
+ */
+int		stk_empty(t_stack *stack);
+
+/**
+ * @brief	Counts the number of elements in the stack.
+ *
+ * @param stack	Pointer to the stack.
+ *
+ * @return	Number of elements in the stack.
+ */
+int		stk_size(t_stack *stack);
+
+/**
+ * @brief	Checks the top element of the stack.
+ *
+ * @param stack	Pointer to the stack.
+ *
+ * @return 	Pointer to the top element;
+ * 			NULL if the stack is empty.
+ */
+t_stack	*stk_top(t_stack *stack);
+
+/**
+ * @brief	Checks the data of the top element of the stack.
+ *
+ * @param stack	Pointer to the stack.
+ *
+ * @return	Pointer to the top element data;
+ * 			NULL if the stack is empty.
+ */
+void	*stk_peek(t_stack *stack);
+
+/**
+ * @brief 	Prints the stack.
+ * 
+ * @param stack	Pointer to the stack. 
+ */
+void	stk_print(t_stack *stack);
 
 #endif
