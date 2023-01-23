@@ -1,0 +1,80 @@
+### CLion ###
+.idea/
+*.iml
+*.ipr
+
+# CMake
+cmake-build-*/
+
+# File-based project format
+*.iws
+
+
+### Visual Studio Code ###
+.vscode/
+
+# Local History
+.history/
+.history
+.ionide
+
+# Extensions
+*.vsix
+
+
+### Mac OS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# iCloud generated files
+*.icloud
+
+
+### C ###
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Executables
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+
+#### Proyecto ###
+
+# Librería
+DS
+
+# Archivos de test
+*.md
