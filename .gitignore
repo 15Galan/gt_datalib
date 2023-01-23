@@ -75,7 +75,3 @@ cmake-build-*/
 
 # Librería
 DS
-
-# Archivos de test
-*.md
-!README.md

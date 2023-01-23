@@ -125,3 +125,9 @@ No importa su contenido, solo el primer elemento.
 He estado hablando con HAL y me ha dicho que no hay forma de evaluar el proyecto, así que no hay evaluación.
 
 *Sí obstante*, si queréis vacilar sobre *quién tiene la rama más larga*, siempre podréis hablar con otros de vuestros compañeros, ¡nadie os lo va a impedir!
+
+---
+
+# Bonus
+
+Implementad una estructura de datos extra: **los Conjuntos**.

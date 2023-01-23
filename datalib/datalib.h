@@ -509,4 +509,140 @@ void	*stk_peek(t_stack *stack);
  */
 void	stk_print(t_stack *stack);
 
+/*********************************** SET ************************************/
+
+/**
+ * @brief	Struct for the elements of the set.
+ * 
+ * @param data	The data to be stored in the element.
+ * @param next	Pointer to the next element in the set.
+ */
+typedef struct s_set
+{
+	void			*data;
+	struct s_set	*next;
+}	t_set;
+
+/**
+ * @brief	Creates a new element for the set.
+ * 
+ * @param data	The data to store in the element.
+ * 
+ * @return	Pointer to the new element.
+ */
+t_set	*set_new(void *data);
+
+/**
+ * @brief	Adds an element to the set.
+ * 
+ * @param set	Pointer to the set.
+ * @param data	The data to store in the new element.
+ */
+void	set_add(t_set **set, void *data);
+
+/**
+ * @brief	Deletes an element from the set.
+ * 
+ * @param set	Pointer to the set.
+ * @param data	The data to be deleted.
+ */
+void	set_remove(t_set **set, void *data);
+
+/**
+ * @brief	Deletes the set.
+ * 
+ * @param set	Pointer to the set.
+ */
+void	set_clear(t_set **set);
+
+/**
+ * @brief	Creates a new set resulting from the union of 2 sets.
+ * 
+ * @param set1	Pointer to the first set.
+ * @param set2	Pointer to the second set.
+ * 
+ * @return	Pointer to a new set with elements in the first or second set.
+ */
+t_set	*set_union(t_set *set1, t_set *set2);
+
+/**
+ * @brief	Creates a new set resulting from the intersection of 2 sets.
+ * 
+ * @param set1	Pointer to the first set.
+ * @param set2	Pointer to the second set.
+ * 
+ * @return	Pointer to the new set with elements in the first and second set.
+ */
+t_set	*set_inter(t_set *set1, t_set *set2);
+
+/**
+ * @brief	Creates a new set resulting from the difference of 2 sets.
+ * 
+ * @param set1	Pointer to the first set.
+ * @param set2	Pointer to the second set.
+ * 
+ * @return	Pointer to the new set with elements in the first set,
+ * 			but not in the second.
+ */
+t_set	*set_diff(t_set *set1, t_set *set2);
+
+/**
+ * @brief	Checks if the set is empty.
+ * 
+ * @param set	Pointer to the set.
+ * 
+ * @return	1 if the set is empty;
+ * 			0 otherwise.
+ */
+int		set_empty(t_set *set);
+
+/**
+ * @brief	Checks if the set contains an element.
+ * 
+ * @param set	Pointer to the set.
+ * @param data	The data to be checked.
+ * 
+ * @return	1 if the set contains the element;
+ * 			0 otherwise.
+ */
+int		set_contains(t_set *set, void *data);
+
+/**
+ * @brief	Checks if the first set is a subset of the second set.
+ * 
+ * @param set1	Pointer to the first set.
+ * @param set2	Pointer to the second set.
+ * 
+ * @return	1 if the second set contains all elements of the first set;
+ * 			0 otherwise.
+ */
+int		set_subset(t_set *set1, t_set *set2);
+
+/**
+ * @brief	Checks if the first set is equal to the second set.
+ * 
+ * @param set1	Pointer to the first set.
+ * @param set2	Pointer to the second set.
+ * 
+ * @return	1 if the first and second set contain the same elements;
+ * 			0 otherwise.
+ */
+int		set_equal(t_set *set1, t_set *set2);
+
+/**
+ * @brief	Counts the number of elements in the set.
+ * 
+ * @param set	Pointer to the set.
+ * 
+ * @return	Number of elements in the set.
+ */
+int		set_size(t_set *set);
+
+/**
+ * @brief	Prints the set.
+ * 
+ * @param set	Pointer to the set.
+ */
+void	set_print(t_set *set);
+
 #endif
