@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 11:17:48 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:18:27 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -322,5 +322,96 @@ t_dlist	*dll_search(t_dlist *list, void *data);
  * @param list	Pointer to the first element of the list.
  */
 void	dll_print(t_dlist *list);
+
+/*********************************** QUEUE ************************************/
+
+/**
+ * @brief 	Struct for the elements of the queue.
+ * 
+ * @param data	The data to be stored in the element.
+ * @param next	Pointer to the next element in the queue.
+ */
+typedef struct s_queue
+{
+	void			*data;
+	struct s_queue	*next;
+}	t_queue;
+
+/**
+ * @brief   Creates a new node with the given data.
+ *
+ * @param data  Pointer to the data to be stored in the node.
+ *
+ * @return  Pointer to the new node.
+ */
+t_queue	*que_new(void *data);
+
+/**
+ * @brief   Adds a new node at the end of the queue.
+ *
+ * @param queue	Pointer to the first element of the queue.
+ * @param data	Pointer to the data to be stored in the node.
+ */
+void	que_enqueue(t_queue **queue, void *data);
+
+/**
+ * @brief   Removes the first node of the queue.
+ *
+ * @param queue	Pointer to the first element of the queue.
+ * 
+ * @return  Pointer to the data stored in the removed node.
+ */
+void	*que_dequeue(t_queue **queue);
+
+/**
+ * @brief   Removes all the nodes of the queue.
+ *
+ * @param queue	Pointer to the first element of the queue.
+ */
+void	que_clear(t_queue **queue);
+
+/**
+ * @brief  	Checks if the queue is empty.
+ * 
+ * @param queue	Pointer to the first element of the queue.
+ *  
+ * @return	1 if the queue is empty;
+ * 			0 otherwise.
+ */
+int		que_empty(t_queue *queue);
+
+/**
+ * @brief   Counts the number of elements in the queue.
+ * 
+ * @param queue	Pointer to the first element of the queue.
+ * 
+ * @return  The number of elements in the queue.
+ */
+int		que_size(t_queue *queue);
+
+/**
+ * @brief   Identifies the first element of the queue.
+ * 
+ * @param queue	Pointer to the first element of the queue.
+ * 
+ * @return  Pointer to the first element of the queue.
+ */
+t_queue	*que_first(t_queue *queue);
+
+/**
+ * @brief   Identifies the last element of the queue.
+ * 
+ * @param queue	Pointer to the first element of the queue.
+ * 
+ * @return  Pointer to the last element of the queue.
+ */
+t_queue	*que_last(t_queue *queue);
+
+/**
+ * @brief	Prints the queue.
+ * 
+ * @param queue	Pointer to the first element of the queue.
+ */
+void	que_print(t_queue *queue);
 
 #endif
