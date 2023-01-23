@@ -9,7 +9,7 @@ AR 		= 	ar rc
 RM 		= 	rm -f
 
 # Files
-SOURCES = 	$(wildcard datalib/*.c)
+SOURCES = 	$(wildcard Libft/*.c datalib/*.c)
 OBJECTS =	$(SOURCES:.c=.o)
 TESTING	= 	$(wildcard tests/*.c)
 
@@ -47,3 +47,7 @@ see:
 	@echo
 	@echo "Sources	:	$(SOURCES)"
 	@echo "Objects	:	$(OBJECTS)"
+
+norm:
+	@norminette $(SOURCES)
+
