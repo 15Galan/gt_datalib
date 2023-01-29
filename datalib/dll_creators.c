@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 11:55:26 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/29 14:29:42 by juan-aga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 t_dlist	*dll_new(void *data)
 {
 	// TODO
+	// by juan-aga
 }
 
 void	dll_add_first(t_dlist **list, t_dlist *elem)
