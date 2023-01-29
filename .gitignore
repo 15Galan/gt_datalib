@@ -75,3 +75,7 @@ cmake-build-*/
 
 # Librería
 DS
+
+# Markdown
+*.md
+!README.md
