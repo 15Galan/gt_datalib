@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dll_creators.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/29 14:29:42 by juan-aga         ###   ########.fr       */
+/*   Updated: 2023/01/29 15:16:17 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	dll_add_after(t_dlist *elem, t_dlist *new)
 void	dll_add_last(t_dlist **list, t_dlist *elem)
 {
 	// TODO
+	//
 }
 
 t_dlist	*dll_replace(t_dlist **list, void *old, void *new)
