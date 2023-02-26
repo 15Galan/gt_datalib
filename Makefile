@@ -30,7 +30,7 @@ clean:
 	@echo "Object files removed."
 
 fclean: clean
-	@$(RM) $(LIBRARY) $(filter-out README.md, $(wildcard *.md))
+	@$(RM) $(LIBRARY) $(filter-out README.md, $(wildcard *.md)) *.out
 	@echo "File '$(LIBRARY)' removed."
 
 re: fclean all
@@ -56,7 +56,7 @@ see:
 norm:
 	@norminette $(SOURCES)
 
-tests: all
+tests: all clean
 	@$(CC) tests/$(TEST_01).c $(LIBRARY) -o $(TEST_01).out
 	@$(CC) tests/$(TEST_02).c $(LIBRARY) -o $(TEST_02).out
 	@$(CC) tests/$(TEST_03).c $(LIBRARY) -o $(TEST_03).out
