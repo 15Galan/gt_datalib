@@ -23,6 +23,7 @@ cmake-build-*/
 
 
 ### Mac OS ###
+
 # General
 .DS_Store
 .AppleDouble
@@ -33,6 +34,7 @@ cmake-build-*/
 
 
 ### C ###
+
 # Prerequisites
 *.d
 
