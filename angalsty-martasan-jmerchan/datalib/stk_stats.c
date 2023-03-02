@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stk_stats.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: angalsty <angalsty@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 12:09:21 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/03/02 19:49:07 by angalsty         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,39 @@
 
 int	stk_empty(t_stack *stack)
 {
-	// TODO
+	if (!set)
+		return (1);
+	return (0);
 }
 
 int	stk_size(t_stack *stack)
 {
-	// TODO
+	int	size;
+
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
 }
 
 t_stack	*stk_top(t_stack *stack)
 {
-	// TODO
+	if (stk_empty(stack))
+		return (NULL);
+	return (stack);
 }
 
 void	*stk_peek(t_stack *stack)
 {
-	// TODO
+	t_stack	*aux;
+
+	if (*stack == NULL)
+		return (NULL);
+	aux = *stack;
+	*stack = (*stack)->next;
+	aux->next = NULL;
+	return (aux);
 }
