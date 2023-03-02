@@ -6,7 +6,7 @@
 /*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/03/02 19:23:20 by lumorale         ###   ########.fr       */
+/*   Updated: 2023/03/02 19:30:20 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,31 @@ void	dll_add_after(t_dlist *elem, t_dlist *new)
 
 void	dll_add_last(t_dlist **list, t_dlist *elem)
 {
-	// TODO
+	t_dlist	*last;
+
+	if (dll_empty(*list))
+		*list = elem;
+	else
+	{
+		last = dll_last(*list);
+		last->next = elem;
+		elem->prev = last;
+	}
 }
 
-t_dlist	*dll_replace(t_dlist **list, void *old, void *new)
+t_dlist	*dll_replace(t_dlist **elem, void *old, void *data)
 {
-	// TODO
+	t_dlist	*new;
+
+	new = dll_new(data);
+	if (!new)
+		return (NULL);
+	if (elem->prev)
+		elem->prev->next = new;
+	if (elem->next)
+		elem->next->prev = new;
+	new->prev = elem->prev;
+	new->next = elem->next;
+	free(elem);
+	return (new);
 }
