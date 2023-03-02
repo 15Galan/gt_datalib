@@ -1,0 +1,3 @@
+[submodule "angalsty-martasan-jmerchan/Libft"]
+	path = angalsty-martasan-jmerchan/Libft
+	url = git@github.com:15Galan/Libft.git
