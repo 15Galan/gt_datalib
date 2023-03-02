@@ -1,0 +1,3 @@
+[submodule "lumorale-fsantama-gfredes-/Libft"]
+	path = lumorale-fsantama-gfredes-/Libft
+	url = git@github.com:15Galan/Libft.git
