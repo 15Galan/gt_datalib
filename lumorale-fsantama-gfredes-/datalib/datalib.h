@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   datalib.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/02/27 00:01:00 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/03/02 19:30:58 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	dll_add_last(t_dlist **list, t_dlist *elem);
  * @param list	Pointer to the first element of the list.
  * @param old	The data to be replaced.
  * @param new	The new data to replace the old data.
- * 
+ * z
  * @return	Pointer to the new element.
  */
 t_dlist	*dll_replace(t_dlist **list, void *old, void *new);
