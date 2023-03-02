@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dll_printers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/19 21:11:50 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/03/02 19:33:27 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
