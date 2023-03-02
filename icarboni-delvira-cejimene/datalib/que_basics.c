@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/03/02 19:46:57 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/03/02 19:48:40 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,16 @@ void	que_enqueue(t_queue **queue, void *data)
 
 void	*que_dequeue(t_queue **queue)
 {
-	// TODO
+	t_queue	*aux;
+	void	*data;
+
+	if (que_empty(*queue))
+		return (NULL);
+	aux = *queue;
+	*queue = (*queue)->next;
+	data = aux->data;
+	free(aux);
+	return (data);
 }
 
 void	que_clear(t_queue **queue)
