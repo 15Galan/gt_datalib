@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/03/02 19:53:37 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/03/02 19:54:58 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ t_queue	*que_first(t_queue *queue)
 
 t_queue	*que_last(t_queue *queue)
 {
-	// TODO
+	while (queue && queue->next)
+		queue = queue->next;
+	return (queue);
 }
 
 t_queue	*que_search(t_queue *queue, void *data)
