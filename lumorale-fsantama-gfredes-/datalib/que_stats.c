@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   que_stats.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: gfredes- <gfredes-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 12:04:00 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/03/02 19:35:16 by gfredes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,41 @@
 
 int	que_empty(t_queue *queue)
 {
-	// TODO
+	return (queue == NULL);
 }
 
 int	que_size(t_queue *queue)
 {
-	// TODO
+	int	i;
+
+	i = 0;
+	while (queue)
+	{
+		queue = queue->next;
+		i++;
+	}
+	return (i);
 }
 
 t_queue	*que_first(t_queue *queue)
 {
-	// TODO
+	return (queue);
 }
 
 t_queue	*que_last(t_queue *queue)
 {
-	// TODO
+	while (queue && queue->next)
+		queue = queue->next;
+	return (queue);
 }
 
 t_queue	*que_search(t_queue *queue, void *data)
 {
-	// TODO
+	while (queue)
+	{
+		if (queue->data == data)
+			return (queue);
+		queue = queue->next;
+	}
+	return (NULL);
 }
