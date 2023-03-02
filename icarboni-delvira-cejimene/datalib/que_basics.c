@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   que_basics.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 12:03:22 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/03/02 19:43:38 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 t_queue	*que_new(void *data)
 {
-	// TODO
+	t_queue	*new;
+
+	new = (t_queue *) malloc(sizeof(t_queue));
+	if (!new)
+		return (NULL);
+	new->data = data;
+	new->next = NULL;
+	return (new);
 }
 
 void	que_enqueue(t_queue **queue, void *data)
