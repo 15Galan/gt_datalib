@@ -88,7 +88,7 @@ Esto lo he dicho ya, ¿no? Bueno, es que son **muy importantes**.
 
 Este proyecto está estructurado de una forma distinta a la que podrías estar acostumbrado: lee detenidamente este apartado antes de empezar a trabajar.
 
-**Todo el código necesario ya está programado en *recursos.txt***, por lo que para realizar las tareas, solo tendrás que colocarlo adecuadamente o bien realizar pequeñas modificaciones sobre un código que ya hayas usado
+**Todo el código necesario ya está programado en *recursos.md***, por lo que para realizar las tareas, solo tendrás que colocarlo adecuadamente o bien realizar pequeñas modificaciones sobre un código que ya hayas usado
 
 ---
 
@@ -104,7 +104,7 @@ Esa carpeta actuará de plantilla, cada equipo copiará
 
 Ejecuta el siguiente comando (si no lo has hecho nunca) para evitar problemas en el desarrollo:
 ```shell
-$> git config --global merge.ff false
+git config --global merge.ff false
 ```
 
 > Esto desactiva los *merges fast-foward*, algo que podría confundir a los recién llegados a Git.
