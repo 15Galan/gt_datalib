@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>ft_datalib</h1>
+    <h1>gt_datalib</h1>
 </div>
 
 ```mermaid
@@ -19,7 +19,7 @@ flowchart LR
     end
 
     que(*que) -.-> q1
-    subgraph Qeue
+    subgraph Queue
         q1(first) --> q2(...) --> q3(last)
     end
 
@@ -37,27 +37,23 @@ flowchart LR
 
 # I. Introducción
 
-Las **estructuras de datos** son una parte fundamental de cualquier lenguaje de programación, y en este proyecto vas a aprender a implementarlas y a usarlas; concretamente, programarás:
+Las estructuras de datos son una parte fundamental de cualquier lenguaje de programación, y en este proyecto vas a aprender a implementar y a usar las siguientes:
 
-**Listas Doblemente Enlazadas**  
-La hermana mayor de las Listas Enlazadas.  
-Aquí podrás moverte tanto hacia adelante como hacia atrás.
+|                 Estructura de datos                 |              Tipo               | Descripción                                                                               |
+|:---------------------------------------------------:|:-------------------------------:|:----------------------------------------------------------------------------------------- |
+| Lista Doblemente Enlazada<br>*(Doubly Linked List)* |             Lineal              | Cada elemento apunta al anterior y al siguiente.<br>Puede accederse a cualquier elemento. |
+|                  Cola<br>*(Queue)*                  | FIFO<br>*(First In, First Out)* | Cada elemento apunta al siguiente.<br>Puede accederse solo al primer y último elemento.   |
+|                  Pila<br>*(Stack)*                  | LIFO<br>*(Last In, First Out)*  | Cada elemento apunta al siguiente.<br>Puede accederse solo al primer elemento.            |
+|                 Conjunto<br>*(Set)*                 |            No lineal            | Cada elemento apunta al siguiente.<br>No admite elementos repetidos.                      |
 
-**Colas**  
-La hermana pequeña de las listas; son de tipo FIFO (*First In, First Out*).  
-Aquí solo importan el primer y último elemento, el resto no son relevantes.
-
-**Pilas**  
-La hermana pequeña... ¿de las Colas? Yo que sé; son de tipo LIFO (*Last In, First Out*).  
-Aquí solo importa el último elemento, el resto se *apilan* después.
-
+Además, si todo sale bien, ¡luego podrás incluirlas en tu Libft!
 
 
 # II. Instrucciones generales
 
-Este proyecto seguirá la misma dinámica que cualquier otro proyecto del *cursus*: reglas del *Makefile*, *Norma\**, etc; no obstante, para este proyecto en particular se añadirá algo nuevo, **un buen uso de Git y GitHub**:
-- **Se debe aplicar el *Flujo de Trabajo de Git* al desarrollo.**
-- **Se deben usar los recursos de GitHub para gestionar el proyecto.**
+Este proyecto seguirá la misma dinámica que cualquier otro proyecto del *cursus*: reglas del *Makefile*, *Norma*, etc; no obstante, para este proyecto en particular se añadirá algo nuevo, **un buen uso de Git y GitHub**:
+- Se debe aplicar el *Flujo de Trabajo de Git* al desarrollo.
+- Se deben usar los recursos de GitHub para gestionar el proyecto.
 - Se realizará en equipos de 3 personas, formados por aquellos en la misma fila.
 
 > Será necesario repartir las tareas del proyecto entre los miembros del equipo para poder terminarlo a tiempo.
@@ -76,9 +72,7 @@ Se espera un repositorio que contenga:
 - ***Pull requests*** que reflejen la revisión de código.
 
 **Aprendizaje sobre estructuras de datos.**  
-Saber implementar y manejar estructuras de datos es algo increíblemente útil en cualquier lenguaje de programación.
-
-Esto lo he dicho ya, ¿no? Bueno, es que son **muy importantes**.
+Saber implementar y manejar estructuras de datos, una habilidad muy útil para todo programador.
 
 
 
@@ -88,26 +82,25 @@ Esto lo he dicho ya, ¿no? Bueno, es que son **muy importantes**.
 
 Este proyecto está estructurado de una forma distinta a la que podrías estar acostumbrado: lee detenidamente este apartado antes de empezar a trabajar.
 
-**Todo el código necesario ya está programado en *recursos.md***, por lo que para realizar las tareas, solo tendrás que colocarlo adecuadamente o bien realizar pequeñas modificaciones sobre un código que ya hayas usado
+**Todo el código necesario ya está programado en *recursos***, por lo que para realizar las tareas solo tendrás que colocarlo adecuadamente.
 
----
 
-**Estructura del repositorio.**  
-Este proyecto solo contiene la carpeta *00-projects-template*, que se corresponde con un proyecto en C totalmente preparado y funcional una vez se añada el código necesario.
+## Descripción
 
-Esa carpeta actuará de plantilla, cada equipo copiará
+Este proyecto se divide en 2 partes bien diferenciadas:
+
+**Primero**, formarás un equipo con otros estudiantes y gestionaréis un proyecto en GitHub usando las herramientas *Issues*, *Milestones* y *Projects* que ofrece la plataforma, con las que os repartiréis las distintas tareas de este proyecto.
+
+El objetivo es que descubras cómo se puede usar GitHub para gestionar un proyecto y que aprendas a trabajar en equipo, ya que más adelante (ya sea en 42 o en tu futuro laboral) será necesario que sepas cómo desenvolverte en un entorno de trabajo colaborativo.
+
+**Segundo**, implementarás la librería *datalib* usando las funciones que se encuentran en el fichero *recursos* para completar las funciones vacías de los ficheros de código C del proyecto. También cuentas con un *Makefile* que te ayudará a compilar y probar tu código.
+
+El objetivo es que tu equipo y tú simuléis un entorno de trabajo real, donde trabajéis en paralelo y tengáis que combinar cambios de forma que no produzcan conflictos, comprobando cómo evoluciona el código gracias al proyecto anteriormente creado.
 
 
 ## Parte Obligatoria
 
 ### 00 - Preparación
-
-Ejecuta el siguiente comando (si no lo has hecho nunca) para evitar problemas en el desarrollo:
-```shell
-git config --global merge.ff false
-```
-
-> Esto desactiva los *merges fast-foward*, algo que podría confundir a los recién llegados a Git.
 
 **Cread un equipo de 3 personas**: vuestro líder será el estudiante sentado en el centro de la fila, y el resto de miembros serán los que estén a su izquierda y a su derecha; dáos la mano, un par de besos, o lo que proceda.
 
@@ -175,27 +168,31 @@ flowchart TB
     
 ```
 
-Observa en el diagrama de ejemplo que los *Projects* son independientes a los Repositorios, al contrario de lo que pasa con los *Issues* y los *Milestones*; esto permite que un *Project* pueda contener recursos de distintos repositorios, pero un repositorio solo puede contener *Issues* y *Milestones* propios.
+Observa que los *Projects* son independientes a los Repositorios, al contrario de lo que pasa con los *Issues* y los *Milestones*; esto permite que un *Project* pueda contener recursos de distintos repositorios, pero un repositorio solo puede contener *Issues* y *Milestones* propios.
 
 ---
 
 El dueño del repositorio -es decir, el líder- deberá:
-- Crear un *Project* público para organizar el trabajo con al menos 2 vistas: tabla (Table) y tablero Kanban (Board).
-- Añadir al resto de miembros como colaboradores, igual que pasó con el *fork*.
+- Crear un *Project* para organizar el trabajo y hacerlo público (*Settings* del *Project*).
+- Definir al menos 2 vistas: tabla (Table) y tablero Kanban (Board).
+- Añadir al resto de miembros como colaboradores (igual que pasó con el *fork*).
+- Asignar el *Project* al repositorio (en la pestaña *Project* del repositorio).
 
 Una vez hecho eso, **observad los archivos que tenéis**: creo que es evidente que para que el código compile y se ejecute, tendréis que completar las funciones que actualmente se encuentran vacías (todas, excepto los *\*_print.c*); y por otra parte, también podéis observar que para cada estructura de datos hay varios archivos, por lo que quizás sea buena idea organizar el proyecto de la siguiente forma:
-1. Completar un fichero (un *Issue*).
-2. Varios ficheros completan una estructura de datos (un *Milestone*).
-3. Varias estructuras de datos completan el proyecto (¡fin del taller!).
+1. Completar un fichero será un *Issue*.
+2. Completar una estructura de datos será un *Milestone*.
+3. Completar el proyecto será terminar todos los *Milestones*.
 
 Dicho esto, y usando el *Project* que habéis creado:
-1. Cread un *Milestone* para cada estructura de datos (con o sin fecha).
-2. Cread los *Issues* "Planificar las tareas" (asignado al líder) y "Añadir Libft como submódulo".
-3. Cread un *Issue* por cada fichero que haya que completar y asignadle el *Milestone* y *Project* correspondiente.
+1. Cread un *Milestone* para cada estructura de datos (con fecha límite).
+2. Cread el *Issue* "Planificar las tareas".
+3. Cread un *Issue* por cada fichero a completar y vinculad sus recursos (*Milestone*, *Project*, ...).
 4. Repartid las tareas de forma que cada uno se encargue de una estructura de datos.
 5. Quizás quieras ver el bonus antes de seguir.
 
-> **NOTA:** por supuesto, toda esta información tiene que estar vinculada.  
+> **NOTA:** aseguráos de cumplid correctamente con **el punto 3**.  
+> Si no completáis estos datos, nada de lo que estáis haciendo tendrá sentido.  
+> Aquí un [ejemplo de Issue](https://github.com/15Galan/gt_datalib/issues/13).
 
 
 ### 02 - Demostración de `push` + `pull`
@@ -207,19 +204,10 @@ El repositorio ya está listo:
 
 El líder y solo el líder, hará un pequeño-gran cambio:
 1. Duplicar la carpeta *projects-template* en la rama `develop`.
-2. Renombrar la copia como ***<estud.1>-<estud.2>-<estud.3>*** (usuarios en la intra).
+2. Renombrar la copia como ***<estud.1>-<estud.2>-<estud.3>*** (siendo *estud.X* vuestros usuarios de la intra).
 3. Subir los cambios a la rama `develop` remota, usando `git push`.
 
 Ahora, el resto de miembros deberían tener ese cambio disponible para actualizar sus repositorios.
-
-Ejemplo de la salida de un `git status` con un cambio disponible:
-```
-On branch develop
-Your branch is behind 'origin/develop' by 1 commit.
-  (use "git pull" to update your local branch)
-
-(...)
-```
 
 Una vez el líder haya subido los cambios, el resto de miembros deberán:
 1. Comprobar que existe un cambio en el repositorio remoto con `git status`*.
@@ -271,7 +259,11 @@ Lo que hacéis con ese último paso es informar a vuestros compañeros de que ha
 - Si el código es correcto: los revisores lo aceptarán y se fusionarán los cambios.
 - Incluid un comentario en el *Pull Request* para compartir alguna idea (por ejemplo, un "Buen trabajo".).
 
-**Completando todos los *Milestones*, habréis terminado el proyecto. ¡Enhorabuena!**  
+**Completando todos los *Milestones*, habréis terminado el proyecto. ¡Enhorabuena!**
+
+
+### 05 - Integración
+
 Ahora, la parte interesante, uando hayáis terminado el proyecto:
 - Cread un *Pull Request* para fusionar **vuestro `develop`** con **mi `develop`**, (repositorio original).
 - El *Pull Request* debe describir de forma resumida lo que queréis integrar.
