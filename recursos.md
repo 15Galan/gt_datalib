@@ -1,13 +1,6 @@
 # Listas Doblemente Enlazadas
 
 ```C
-/**
- * @brief   Creates a new node with the given data.
- *
- * @param data  Pointer to the data to be stored in the node.
- *
- * @return  Pointer to the new node.
- */
 t_dlist	*dll_new(void *data)
 {
 	t_dlist	*new;
@@ -23,12 +16,6 @@ t_dlist	*dll_new(void *data)
 ```
 
 ```C
-/**
- * @brief   Adds a new node at the beginning of the list.
- *
- * @param list	Pointer to the first element of the list.
- * @param elem	Pointer to the new node to be added.
- */
 void	dll_add_first(t_dlist **list, t_dlist *elem)
 {
 	if (dll_empty(*list))
@@ -43,12 +30,6 @@ void	dll_add_first(t_dlist **list, t_dlist *elem)
 ```
 
 ```C
-/**
- * @brief   Adds a new node after the given node.
- *
- * @param list	Pointer to the first element of the list.
- * @param data  Pointer to the data to be stored in the node.
- */
 void	dll_add_after(t_dlist *elem, t_dlist *new)
 {
 	if (dll_empty(elem) || dll_empty(new))
@@ -62,12 +43,6 @@ void	dll_add_after(t_dlist *elem, t_dlist *new)
 ```
 
 ```C
-/**
- * @brief   Adds a new node at the end of the list.
- *
- * @param list	Pointer to the first element of the list.
- * @param elem	Pointer to the new node to be added.
- */
 void	dll_add_last(t_dlist **list, t_dlist *elem)
 {
 	t_dlist	*last;
@@ -84,15 +59,6 @@ void	dll_add_last(t_dlist **list, t_dlist *elem)
 ```
 
 ```C
-/**
- * @brief   Replace the data of the given node.
- *
- * @param elem	Pointer to the node to be modified.
- * @param data  The new data.
- *
- * @return  Pointer to the modified node;
- * 			NULL otherwise.
- */
 t_dlist	*dll_replace(t_dlist *elem, void *data)
 {
 	t_dlist	*new;
@@ -112,11 +78,6 @@ t_dlist	*dll_replace(t_dlist *elem, void *data)
 ```
 
 ```C
-/**
- * @brief   Removes the first node of the list.
- *
- * @param list	Pointer to the first element of the list.
- */
 void	dll_remove_first(t_dlist **list)
 {
 	t_dlist	*aux;
@@ -132,12 +93,6 @@ void	dll_remove_first(t_dlist **list)
 ```
 
 ```C
-/**
- * @brief   Removes the given node from the list.
- *
- * @param list	Pointer to the first element of the list.
- * @param elem	Pointer to the element to be removed.
- */
 void	dll_remove(t_dlist **list, t_dlist *elem)
 {
 	if (dll_empty(*list))
@@ -153,11 +108,6 @@ void	dll_remove(t_dlist **list, t_dlist *elem)
 ```
 
 ```C
-/**
- * @brief   Removes the last node of the list.
- *
- * @param list	Pointer to the first element of the list.
- */
 void	dll_remove_last(t_dlist **list)
 {
 	t_dlist	*aux;
@@ -176,12 +126,6 @@ void	dll_remove_last(t_dlist **list)
 ```
 
 ```C
-/**
- * @brief	Removes all the nodes with the given data.
- *
- * @param list	Pointer to the first element of the list.
- * @param data	Pointer to the data to be removed.
- */
 void	dll_purge(t_dlist **list, void *data)
 {
 	t_dlist	*aux;
@@ -199,11 +143,6 @@ void	dll_purge(t_dlist **list, void *data)
 ```
 
 ```C
-/**
- * @brief   Removes all the nodes of the list.
- *
- * @param list	Pointer to the first element of the list.
- */
 void	dll_clear(t_dlist **list)
 {
 	t_dlist	*aux;
@@ -220,13 +159,6 @@ void	dll_clear(t_dlist **list)
 ```
 
 ```C
-/**
- * @brief	Checks if the list is empty.
- * @param list	Pointer to the first element of the list.
- *
- * @return	1 if the list is empty;
- * 			0 otherwise.
- */
 int	dll_empty(t_dlist *list)
 {
 	return (list == NULL);
@@ -234,13 +166,6 @@ int	dll_empty(t_dlist *list)
 ```
 
 ```C
-/**
- * @brief   Counts the number of nodes in the list.
- *
- * @param list   Pointer to the first element of the list.
- *
- * @return  Number of nodes in the list.
- */
 int	dll_size(t_dlist *list)
 {
 	int	i;
@@ -256,13 +181,6 @@ int	dll_size(t_dlist *list)
 ```
 
 ```C
-/**
- * @brief   Returns the first node of the list.
- *
- * @param list	Pointer to an element of the list.
- *
- * @return	Pointer to the first node of the list.
- */
 t_dlist	*dll_first(t_dlist *list)
 {
 	while (list && list->prev)
@@ -272,13 +190,6 @@ t_dlist	*dll_first(t_dlist *list)
 ```
 
 ```C
-/**
- * @brief   Returns the last node of the list.
- *
- * @param list	Pointer to an element of the list.
- *
- * @return	Pointer to the last node of the list.
- */
 t_dlist	*dll_last(t_dlist *list)
 {
 	while (list && list->next)
@@ -288,15 +199,6 @@ t_dlist	*dll_last(t_dlist *list)
 ```
 
 ```C
-/**
- * @brief	Searches an element in the list.
- *
- * @param list	Pointer to the first element of the list.
- * @param data	The data to search.
- *
- * @return	Pointer to the node containing the data;
- * 			NULL if the data is not found.
- */
 t_dlist	*dll_search(t_dlist *list, void *data)
 {
 	while (list)
@@ -314,13 +216,6 @@ t_dlist	*dll_search(t_dlist *list, void *data)
 # Colas
 
 ```C
-/**
- * @brief   Creates a new node with the given data.
- *
- * @param data  Pointer to the data to be stored in the node.
- *
- * @return  Pointer to the new node.
- */
 t_queue	*que_new(void *data)
 {
 	t_queue	*new;
@@ -335,12 +230,6 @@ t_queue	*que_new(void *data)
 ```
 
 ```C
-/**
- * @brief   Adds a new node at the end of the queue.
- *
- * @param queue	Pointer to the first element of the queue.
- * @param data	Pointer to the data to be stored in the node.
- */
 void	que_enqueue(t_queue **queue, void *data)
 {
 	t_queue	*new;
@@ -358,13 +247,6 @@ void	que_enqueue(t_queue **queue, void *data)
 ```
 
 ```C
-/**
- * @brief   Removes the first node of the queue.
- *
- * @param queue	Pointer to the first element of the queue.
- * 
- * @return  Pointer to the data stored in the removed node.
- */
 void	*que_dequeue(t_queue **queue)
 {
 	t_queue	*aux;
@@ -381,11 +263,6 @@ void	*que_dequeue(t_queue **queue)
 ```
 
 ```C
-/**
- * @brief   Removes all the nodes of the queue.
- *
- * @param queue	Pointer to the first element of the queue.
- */
 void	que_clear(t_queue **queue)
 {
 	while (!que_empty(*queue))
@@ -394,13 +271,6 @@ void	que_clear(t_queue **queue)
 ```
 
 ```C
-/**
- * @brief	Checks if the queue is empty.
- * @param queue	Pointer to the first element of the queue.
- *
- * @return	1 if the queue is empty;
- * 			0 otherwise.
- */
 int	que_empty(t_queue *queue)
 {
 	return (queue == NULL);
@@ -408,13 +278,6 @@ int	que_empty(t_queue *queue)
 ```
 
 ```C
-/**
- * @brief   Counts the number of nodes in the queue.
- *
- * @param queue   Pointer to the first element of the queue.
- *
- * @return  Number of nodes in the queue.
- */
 int	que_size(t_queue *queue)
 {
 	int	i;
@@ -430,13 +293,6 @@ int	que_size(t_queue *queue)
 ```
 
 ```C
-/**
- * @brief   Returns the first node of the queue.
- *
- * @param queue	Pointer to an element of the queue.
- *
- * @return	Pointer to the first node of the queue.
- */
 t_queue	*que_first(t_queue *queue)
 {
 	return (queue);
@@ -444,13 +300,6 @@ t_queue	*que_first(t_queue *queue)
 ```
 
 ```C
-/**
- * @brief   Returns the last node of the queue.
- *
- * @param queue	Pointer to an element of the queue.
- *
- * @return	Pointer to the last node of the queue.
- */
 t_queue	*que_last(t_queue *queue)
 {
 	while (queue && queue->next)
@@ -460,15 +309,6 @@ t_queue	*que_last(t_queue *queue)
 ```
 
 ```C
-/**
- * @brief	Searches an element in the queue.
- *
- * @param queue	Pointer to the first element of the queue.
- * @param data	The data to search.
- *
- * @return	Pointer to the node containing the data;
- * 			NULL if the data is not found.
- */
 t_queue	*que_search(t_queue *queue, void *data)
 {
 	while (queue)
@@ -486,13 +326,6 @@ t_queue	*que_search(t_queue *queue, void *data)
 # Pilas
 
 ```C
-/**
- * @brief	Creates a new element for the stack.
- *
- * @param data	The data to store in the element.
- *
- * @return	Pointer to the new element.
- */
 t_stack	*stk_new(void *data)
 {
 	t_stack	*new;
@@ -507,12 +340,6 @@ t_stack	*stk_new(void *data)
 ```
 
 ```C
-/**
- * @brief	Adds an element to the stack.
- *
- * @param stack	Pointer to the stack.
- * @param data 	The data to store in the new element.
- */
 void	stk_push(t_stack **stack, void *data)
 {
 	t_stack	*new;
@@ -526,14 +353,6 @@ void	stk_push(t_stack **stack, void *data)
 ```
 
 ```C
-/**
- * @brief	Extracts the top element from the stack.
- *
- * @param stack	Pointer to the stack.
- *
- * @return 	Pointer to the top element;
- * 			NULL if the stack is empty.
- */
 t_stack	*stk_pop(t_stack **stack)
 {
 	t_stack	*aux;
@@ -548,11 +367,6 @@ t_stack	*stk_pop(t_stack **stack)
 ```
 
 ```C
-/**
- * @brief	Deletes the stack.
- *
- * @param stack 	Pointer to the stack.
- */
 void	stk_clear(t_stack **stack)
 {
 	t_stack	*aux;
@@ -567,14 +381,6 @@ void	stk_clear(t_stack **stack)
 ```
 
 ```C
-/**
- * @brief	Checks if the stack is empty.
- *
- * @param stack	Pointer to the stack.
- *
- * @return	1 if the stack is empty;
- * 			0 otherwise.
- */
 int	stk_empty(t_stack *stack)
 {
 	return (stack == NULL);
@@ -582,13 +388,6 @@ int	stk_empty(t_stack *stack)
 ```
 
 ```C
-/**
- * @brief	Counts the number of elements in the stack.
- *
- * @param stack	Pointer to the stack.
- *
- * @return	Number of elements in the stack.
- */
 int	stk_size(t_stack *stack)
 {
 	int	size;
@@ -604,14 +403,6 @@ int	stk_size(t_stack *stack)
 ```
 
 ```C
-/**
- * @brief	Checks the top element of the stack.
- *
- * @param stack	Pointer to the stack.
- *
- * @return 	Pointer to the top element;
- * 			NULL if the stack is empty.
- */
 t_stack	*stk_top(t_stack *stack)
 {
 	if (stk_empty(stack))
@@ -621,14 +412,6 @@ t_stack	*stk_top(t_stack *stack)
 ```
 
 ```C
-/**
- * @brief	Checks the top element data of the stack.
- *
- * @param stack	Pointer to the stack.
- *
- * @return	Pointer to the top element data;
- * 			NULL if the stack is empty.
- */
 void	*stk_peek(t_stack *stack)
 {
 	if (stk_empty(stack))
