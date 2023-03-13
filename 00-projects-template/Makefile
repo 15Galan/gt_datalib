@@ -49,9 +49,6 @@ see:
 	@echo "Sources	:	$(SOURCES)"
 	@echo "Objects	:	$(OBJECTS)"
 
-norm:
-	@norminette $(SOURCES)
-
 tests: all
 	@for test in $(TESTERS); do \
 		$(CC) tests/$$test.c $(LIBRARY) -o $$test.out; \
