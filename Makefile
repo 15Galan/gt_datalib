@@ -17,13 +17,13 @@ RM 		= 	rm -f
 SOURCES = 	$(wildcard Libft/*.c datalib/*.c)
 OBJECTS =	$(SOURCES:.c=.o)
 TESTING	= 	$(wildcard tests/*.c)
-
+INCLUDE	=	-I ../Libft/
 
 ### RULES ###
 
 # Main rules
 all: $(OBJECTS)
-	@$(AR) $(LIBRARY) $(OBJECTS)
+	@$(AR) $(LIBRARY) $(OBJECTS) $(INCLUDE)
 	@echo "File '$(LIBRARY)' created."
 
 clean:
@@ -40,7 +40,7 @@ re: fclean all
 .PHONY: all clean fclean re
 
 %.o: %.c
-	@$(CC) -c $< -o $@
+	@$(CC) -c $< -o $@ $(INCLUDE)
 	@echo "* File '$<' compiled."
 
 # Testing rules
