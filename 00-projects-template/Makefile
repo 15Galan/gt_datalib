@@ -3,6 +3,7 @@
 # Names
 LIBRARY = 	DS
 TESTERS	=	dll que stk set
+RESULTS	=	results
 
 # Instructions
 CC 		=	gcc -Wall -Wextra -Werror
@@ -50,9 +51,10 @@ see:
 	@echo "Objects	:	$(OBJECTS)"
 
 tests: all
+	@mkdir -p $(RESULTS)
 	@for test in $(TESTERS); do \
 		$(CC) tests/$$test.c $(LIBRARY) -o $$test.out; \
-		./$$test.out > tests/$$test.md; \
+		./$$test.out > $(RESULTS)/$$test.md; \
 	done
 	@echo "Tests ejecuted."
 	@$(RM) *.out
