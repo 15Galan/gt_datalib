@@ -4,6 +4,7 @@
 LIBRARY = 	DS
 TESTERS	=	dll que stk set
 RESULTS	=	results
+INCLUDE	=	-I ../Libft
 
 # Instructions
 CC 		=	gcc -Wall -Wextra -Werror
@@ -19,7 +20,7 @@ OBJECTS =	$(SOURCES:.c=.o)
 
 # Main rules
 all: $(OBJECTS)
-	@$(AR) $(LIBRARY) $(OBJECTS)
+	@$(AR) $(LIBRARY) $(OBJECTS) $(INCLUDE)
 	@echo "File '$(LIBRARY)' created."
 
 clean:
@@ -36,7 +37,7 @@ re: fclean all
 .PHONY: all clean fclean re
 
 %.o: %.c
-	@$(CC) -c $< -o $@
+	@$(CC) -c $< -o $@ $(INCLUDE)
 	@echo "- File '$<' compiled."
 
 # Testing rules

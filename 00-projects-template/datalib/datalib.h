@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/03/07 20:24:53 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:39:24 by juan-aga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "../Libft/libft.h"
+# include "libft.h"
 
 /***************************** DOUBLY LINKED LIST *****************************/
 
