@@ -4,7 +4,7 @@
 LIBRARY = 	DS
 TESTERS	=	dll que stk set
 RESULTS	=	results
-INCLUDE	=	-I ../Libft
+INCLUDE	=	../Libft
 
 # Instructions
 CC 		=	gcc -Wall -Wextra -Werror
@@ -20,7 +20,7 @@ OBJECTS =	$(SOURCES:.c=.o)
 
 # Main rules
 all: $(OBJECTS)
-	@$(AR) $(LIBRARY) $(OBJECTS) $(INCLUDE)
+	@$(AR) $(LIBRARY) $(OBJECTS)
 	@echo "File '$(LIBRARY)' created."
 
 clean:
