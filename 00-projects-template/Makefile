@@ -4,6 +4,7 @@
 LIBRARY = 	DS
 TESTERS	=	dll que stk set
 RESULTS	=	results
+INCLUDE	=	../Libft
 
 # Instructions
 CC 		=	gcc -Wall -Wextra -Werror
@@ -36,7 +37,7 @@ re: fclean all
 .PHONY: all clean fclean re
 
 %.o: %.c
-	@$(CC) -c $< -o $@
+	@$(CC) -c $< -o $@ $(INCLUDE)
 	@echo "- File '$<' compiled."
 
 # Testing rules
