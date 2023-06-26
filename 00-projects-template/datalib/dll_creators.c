@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 11:55:26 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:45:47 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	dll_add_last(t_dlist **list, t_dlist *elem)
 	// TODO
 }
 
-t_dlist	*dll_replace(t_dlist **list, void *old, void *new)
+t_dlist	*dll_replace(t_dlist *elem, void *data)
 {
 	// TODO
 }

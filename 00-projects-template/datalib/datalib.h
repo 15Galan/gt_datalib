@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/02/27 00:01:00 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:39:24 by juan-aga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "../Libft/libft.h"
+# include "../../Libft/libft.h"
 
 /***************************** DOUBLY LINKED LIST *****************************/
 
@@ -67,16 +67,14 @@ void	dll_add_after(t_dlist *elem, t_dlist *new);
 void	dll_add_last(t_dlist **list, t_dlist *elem);
 
 /**
- * @brief 	Replace all the elements in the list that match the old element
- * 			with the new element.
- *
- * @param list	Pointer to the first element of the list.
- * @param old	The data to be replaced.
- * @param new	The new data to replace the old data.
+ * @brief 	Replaces the data of the given element with the given data.
+ * 
+ * @param elem		Pointer to the element to be replaced.
+ * @param new_data	The new data to be stored in the element.
  * 
  * @return	Pointer to the new element.
  */
-t_dlist	*dll_replace(t_dlist **list, void *old, void *new);
+t_dlist	*dll_replace(t_dlist *elem, void *new_data);
 
 /**
  * @brief 	Deletes the first element of the list.
