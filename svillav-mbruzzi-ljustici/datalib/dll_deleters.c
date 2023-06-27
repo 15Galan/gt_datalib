@@ -6,7 +6,7 @@
 /*   By: ljustici <ljustici@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/06/27 14:16:23 by ljustici         ###   ########.fr       */
+/*   Updated: 2023/06/27 14:19:19 by ljustici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,29 @@ void	dll_remove_last(t_dlist **list)
 
 void	dll_purge(t_dlist **list, void *data)
 {
-	// TODO
+	t_dlist	*aux;
+
+	if (dll_empty(*list))
+		return ;
+	aux = *list;
+	while (aux)
+	{
+		if (aux->data == data)
+			dll_remove(list, aux);
+		aux = aux->next;
+	}
 }
 
 void	dll_clear(t_dlist **list)
 {
-	// TODO
+	t_dlist	*aux;
+
+	if (dll_empty(*list))
+		return ;
+	while (*list)
+	{
+		aux = *list;
+		*list = (*list)->next;
+		free(aux);
+	}
 }
