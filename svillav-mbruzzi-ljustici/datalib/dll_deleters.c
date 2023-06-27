@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dll_deleters.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: ljustici <ljustici@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 11:56:17 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/06/27 14:14:18 by ljustici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,15 @@
 
 void	dll_remove_first(t_dlist **list)
 {
-	// TODO
+	t_dlist	*aux;
+
+	if (dll_empty(*list))
+		return ;
+	aux = *list;
+	*list = (*list)->next;
+	if (*list)
+		(*list)->prev = NULL;
+	free(aux);
 }
 
 void	dll_remove(t_dlist **list, t_dlist *elem)
