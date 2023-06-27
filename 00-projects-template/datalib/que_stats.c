@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   que_stats.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 12:04:00 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/06/27 14:10:07 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	que_empty(t_queue *queue)
 {
-	// TODO
+	return (queue == NULL);
 }
 
 int	que_size(t_queue *queue)
