@@ -6,7 +6,7 @@
 /*   By: ljustici <ljustici@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/06/27 13:56:05 by ljustici         ###   ########.fr       */
+/*   Updated: 2023/06/27 13:57:13 by ljustici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,13 @@ void	dll_add_first(t_dlist **list, t_dlist *elem)
 
 void	dll_add_after(t_dlist *elem, t_dlist *new)
 {
-	
+	if (dll_empty(elem) || dll_empty(new))
+		return ;
+	new->next = elem->next;
+	new->prev = elem;
+	if (elem->next)
+		elem->next->prev = new;
+	elem->next = new;
 }
 
 void	dll_add_last(t_dlist **list, t_dlist *elem)
