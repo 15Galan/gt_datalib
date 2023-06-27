@@ -6,7 +6,7 @@
 /*   By: svillalv <svillalv@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:20:09 by antgalan          #+#    #+#             */
-/*   Updated: 2023/06/27 16:37:10 by svillalv         ###   ########.fr       */
+/*   Updated: 2023/06/27 16:38:17 by svillalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,13 @@ int	set_equal(t_set *set1, t_set *set2)
 
 int	set_size(t_set *set)
 {
-	// TODO
+	int	i;
+
+	i = 0;
+	while (set)
+	{
+		i++;
+		set = set->next;
+	}
+	return (i);
 }
