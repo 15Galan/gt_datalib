@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/06/27 14:10:07 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/06/27 14:12:52 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,15 @@ int	que_empty(t_queue *queue)
 
 int	que_size(t_queue *queue)
 {
-	// TODO
+	int	i;
+
+	i = 0;
+	while (queue)
+	{
+		queue = queue->next;
+		i++;
+	}
+	return (i);
 }
 
 t_queue	*que_first(t_queue *queue)
