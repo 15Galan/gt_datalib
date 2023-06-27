@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/06/27 14:15:44 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/06/27 14:16:28 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,11 @@ t_queue	*que_last(t_queue *queue)
 
 t_queue	*que_search(t_queue *queue, void *data)
 {
-	// TODO
+	while (queue)
+	{
+		if (queue->data == data)
+			return (queue);
+		queue = queue->next;
+	}
+	return (NULL);
 }
