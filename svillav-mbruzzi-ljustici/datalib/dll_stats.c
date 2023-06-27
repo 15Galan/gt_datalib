@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dll_stats.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: ljustici <ljustici@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 11:56:54 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/06/27 14:20:58 by ljustici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	dll_empty(t_dlist *list)
 {
-	// TODO
+	return (list == NULL);
 }
 
 int	dll_size(t_dlist *list)
