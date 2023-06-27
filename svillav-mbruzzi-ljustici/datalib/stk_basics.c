@@ -6,7 +6,7 @@
 /*   By: svillalv <svillalv@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/06/27 16:48:48 by svillalv         ###   ########.fr       */
+/*   Updated: 2023/06/27 16:49:33 by svillalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,13 @@ t_stack	*stk_new(void *data)
 
 void	stk_push(t_stack **stack, void *data)
 {
-	// TODO
+	t_stack	*new;
+
+	new = stk_new(data);
+	if (new == NULL)
+		return ;
+	new->next = *stack;
+	*stack = new;
 }
 
 t_stack	*stk_pop(t_stack **stack)
