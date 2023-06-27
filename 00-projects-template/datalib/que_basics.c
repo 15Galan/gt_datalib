@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/06/27 13:53:13 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/06/27 13:54:57 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void	*que_dequeue(t_queue **queue)
 
 void	que_clear(t_queue **queue)
 {
-	// TODO
+	while (!que_empty(*queue))
+		que_dequeue(queue);
 }
