@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/06/27 13:49:03 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/06/27 13:51:50 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,17 @@ t_queue	*que_new(void *data)
 
 void	que_enqueue(t_queue **queue, void *data)
 {
-	/// TODO
+	t_queue	*new;
+
+	new = que_new(data);
+	if (!new)
+		return ;
+	if (que_empty(*queue))
+	{
+		*queue = new;
+		return ;
+	}
+	que_last(*queue)->next = new;
 }
 
 void	*que_dequeue(t_queue **queue)
