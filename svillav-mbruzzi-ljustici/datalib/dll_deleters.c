@@ -6,7 +6,7 @@
 /*   By: ljustici <ljustici@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/06/27 14:14:18 by ljustici         ###   ########.fr       */
+/*   Updated: 2023/06/27 14:15:31 by ljustici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,15 @@ void	dll_remove_first(t_dlist **list)
 
 void	dll_remove(t_dlist **list, t_dlist *elem)
 {
-	// TODO
+	if (dll_empty(*list))
+		return ;
+	if (elem->prev)
+		elem->prev->next = elem->next;
+	else
+		*list = elem->next;
+	if (elem->next)
+		elem->next->prev = elem->prev;
+	free(elem);
 }
 
 void	dll_remove_last(t_dlist **list)
