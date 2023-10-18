@@ -14,25 +14,43 @@
 
 int	dll_empty(t_dlist *list)
 {
-	// TODO
+	return (list == NULL);
 }
 
 int	dll_size(t_dlist *list)
 {
-	// TODO
+	int	i;
+
+	i = 0;
+	while (list)
+	{
+		list = list->next;
+		i++;
+	}
+	return (i);
 }
 
 t_dlist	*dll_first(t_dlist *list)
 {
-	// TODO
+	while (list && list->prev)
+		list = list->prev;
+	return (list);
 }
 
 t_dlist	*dll_last(t_dlist *list)
 {
-	// TODO
+	while (list && list->next)
+		list = list->next;
+	return (list);
 }
 
 t_dlist	*dll_search(t_dlist *list, void *data)
 {
-	// TODO
+	while (list)
+	{
+		if (list->data == data)
+			return (list);
+		list = list->next;
+	}
+	return (NULL);
 }
