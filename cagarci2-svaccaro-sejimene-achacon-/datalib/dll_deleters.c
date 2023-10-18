@@ -6,7 +6,7 @@
 /*   By: cagarci2 <cagarci2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/18 21:23:57 by cagarci2         ###   ########.fr       */
+/*   Updated: 2023/10/18 21:31:08 by cagarci2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,33 @@ void	dll_remove_last(t_dlist **list)
 	else
 		*list = NULL;
 	free(aux);
+}
+
+void	dll_purge(t_dlist **list, void *data)
+{
+	t_dlist	*aux;
+
+	if (dll_empty(*list))
+		return ;
+	aux = *list;
+	while (aux)
+	{
+		if (aux->data == data)
+			dll_remove(list, aux);
+		aux = aux->next;
+	}
+}
+
+void	dll_clear(t_dlist **list)
+{
+	t_dlist	*aux;
+
+	if (dll_empty(*list))
+		return ;
+	while (*list)
+	{
+		aux = *list;
+		*list = (*list)->next;
+		free(aux);
+	}
 }
