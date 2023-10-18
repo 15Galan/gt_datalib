@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_union.c                                        :+:      :+:    :+:   */
+/*   set_remove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmihalyc <jmihalyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 22:34:36 by jmihalyc          #+#    #+#             */
-/*   Updated: 2023/10/18 22:36:32 by jmihalyc         ###   ########.fr       */
+/*   Created: 2023/10/18 22:47:46 by jmihalyc          #+#    #+#             */
+/*   Updated: 2023/10/18 22:48:21 by jmihalyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "datalib.h"
 
-t_set	*set_union(t_set *set1, t_set *set2)
+void	set_remove(t_set **set, void *data)
 {
 	t_set	*aux;
-	t_set	*new;
+	t_set	*prev;
 
-	new = NULL;
-	aux = set1;
+	if (!set_contains(*set, data))
+		return ;
+	aux = *set;
+	prev = NULL;
 	while (aux)
 	{
-		set_add(&new, aux->data);
+		if (aux->data == data)
+		{
+			if (prev)
+				prev->next = aux->next;
+			else
+				*set = aux->next;
+			free(aux);
+			return ;
+		}
+		prev = aux;
 		aux = aux->next;
 	}
-	aux = set2;
-	while (aux)
-	{
-		set_add(&new, aux->data);
-		aux = aux->next;
-	}
-	return (new);
 }
