@@ -190,7 +190,8 @@ Dicho esto, y usando el *Project* que habéis creado:
 4. Repartid las tareas de forma que cada uno se encargue de una estructura de datos.
 5. Quizás quieras ver el bonus antes de seguir.
 
-> **NOTA:** aseguráos de cumplid correctamente con **el punto 3**.  
+> **Warning**  
+> Aseguráos de cumplir correctamente con **el punto 3**.  
 > Si no completáis estos datos, nada de lo que estáis haciendo tendrá sentido.  
 > Aquí un [ejemplo de Issue](https://github.com/15Galan/gt_datalib/issues/13).
 
@@ -210,12 +211,11 @@ El líder y solo el líder, hará un pequeño-gran cambio:
 Ahora, el resto de miembros deberían tener ese cambio disponible para actualizar sus repositorios.
 
 Una vez el líder haya subido los cambios, el resto de miembros deberán:
-1. Comprobar que existe un cambio en el repositorio remoto con `git status`*.
+1. Comprobar que existe un cambio en el repositorio remoto con `git fetch`.
 2. Actualizar la rama `develop` usando `git pull`. **No sigáis hasta que no lo hayáis hecho**.
 
-\* También puedes usar el alias que creaste en la práctica del primer taller.
-
-> **Nota:** asumid que el resto de ejercicios se realizarán sobre dicha carpeta, correspondiente al proyecto de vuestro equipo.
+> **Note**  
+> Asumid que el resto de ejercicios se realizarán sobre dicha carpeta, correspondiente al proyecto de vuestro equipo.
 
 
 ### 03 - El submódulo *Libft*
