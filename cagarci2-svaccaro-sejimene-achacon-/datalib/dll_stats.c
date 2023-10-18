@@ -6,7 +6,7 @@
 /*   By: cagarci2 <cagarci2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/18 21:01:55 by cagarci2         ###   ########.fr       */
+/*   Updated: 2023/10/18 21:24:11 by cagarci2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ int	dll_empty(t_dlist *list)
 {
 	return (list == NULL);
 }
-```
 
-```C
 int	dll_size(t_dlist *list)
 {
 	int	i;
@@ -31,27 +29,21 @@ int	dll_size(t_dlist *list)
 	}
 	return (i);
 }
-```
 
-```C
 t_dlist	*dll_first(t_dlist *list)
 {
 	while (list && list->prev)
 		list = list->prev;
 	return (list);
 }
-```
 
-```C
 t_dlist	*dll_last(t_dlist *list)
 {
 	while (list && list->next)
 		list = list->next;
 	return (list);
 }
-```
 
-```C
 t_dlist	*dll_search(t_dlist *list, void *data)
 {
 	while (list)

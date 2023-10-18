@@ -6,7 +6,7 @@
 /*   By: cagarci2 <cagarci2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/18 20:58:57 by cagarci2         ###   ########.fr       */
+/*   Updated: 2023/10/18 21:23:52 by cagarci2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ t_dlist	*dll_new(void *data)
 	new->prev = NULL;
 	return (new);
 }
-```
 
-```C
 void	dll_add_first(t_dlist **list, t_dlist *elem)
 {
 	if (dll_empty(*list))
@@ -38,9 +36,7 @@ void	dll_add_first(t_dlist **list, t_dlist *elem)
 		*list = elem;
 	}
 }
-```
 
-```C
 void	dll_add_after(t_dlist *elem, t_dlist *new)
 {
 	if (dll_empty(elem) || dll_empty(new))
@@ -51,9 +47,7 @@ void	dll_add_after(t_dlist *elem, t_dlist *new)
 		elem->next->prev = new;
 	elem->next = new;
 }
-```
 
-```C
 void	dll_add_last(t_dlist **list, t_dlist *elem)
 {
 	t_dlist	*last;
@@ -67,9 +61,7 @@ void	dll_add_last(t_dlist **list, t_dlist *elem)
 		elem->prev = last;
 	}
 }
-```
 
-```C
 t_dlist	*dll_replace(t_dlist *elem, void *data)
 {
 	t_dlist	*new;
