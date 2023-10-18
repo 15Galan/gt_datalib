@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   que_basics.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pedro-gm <pedro-gm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/06/27 13:54:57 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/10/18 20:33:41 by pedro-gm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_queue	*que_new(void *data)
 
 void	que_enqueue(t_queue **queue, void *data)
 {
-	t_queue	*new;
+t_queue	*new;
 
 	new = que_new(data);
 	if (!new)
@@ -41,7 +41,7 @@ void	que_enqueue(t_queue **queue, void *data)
 
 void	*que_dequeue(t_queue **queue)
 {
-	t_queue	*aux;
+t_queue	*aux;
 	void	*data;
 
 	if (que_empty(*queue))
@@ -55,6 +55,6 @@ void	*que_dequeue(t_queue **queue)
 
 void	que_clear(t_queue **queue)
 {
-	while (!que_empty(*queue))
+while (!que_empty(*queue))
 		que_dequeue(queue);
 }
