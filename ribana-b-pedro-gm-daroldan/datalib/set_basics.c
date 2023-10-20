@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 20:44:57 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 20:56:19 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/20 01:58:39 by ribana-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,6 @@ void	set_remove(t_set **set, void *data)
 void	set_clear(t_set **set)
 {
 	// TODO
+	if (set)
+		return ;
 }
