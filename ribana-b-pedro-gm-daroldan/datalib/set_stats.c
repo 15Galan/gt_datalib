@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_stats.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: ribana-b <ribana-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:20:09 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 20:57:22 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/20 02:44:50 by ribana-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	set_empty(t_set *set)
 {
-	if (!set)
-		return (1);
-	return (0);
+	return (set == NULL);
 }
 
 int	set_contains(t_set *set, void *data)
