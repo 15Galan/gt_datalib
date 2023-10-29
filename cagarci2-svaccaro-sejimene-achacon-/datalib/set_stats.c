@@ -16,7 +16,7 @@ int	set_empty(t_set *set)
 {
 	if (!set)
 		return (1);
-	return (0);O
+	return (0);
 }
 
 int	set_contains(t_set *set, void *data)
