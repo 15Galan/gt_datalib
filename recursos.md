@@ -541,9 +541,7 @@ t_set	*set_diff(t_set *set1, t_set *set2)
 ```C
 int	set_empty(t_set *set)
 {
-	if (!set)
-		return (1);
-	return (0);
+	return (set == NULL);
 }
 ```
 
@@ -557,6 +555,22 @@ int	set_contains(t_set *set, void *data)
 		set = set->next;
 	}
 	return (0);
+}
+```
+
+```C
+void	set_clear(t_set **set)
+{
+	t_set	*aux;
+
+	if (set_empty(*set))
+		return ;
+	while (*set)
+	{
+		aux = *set;
+		*set = (*set)->next;
+		free(aux);
+	}
 }
 ```
 

@@ -4,7 +4,7 @@
 LIBRARY = 	DS
 TESTERS	=	dll que stk set
 RESULTS	=	results
-INCLUDE =	../Libft/libft.h
+INCLUDE	=	../Libft
 
 # Instructions
 CC 		=	gcc -Wall -Wextra -Werror
@@ -36,15 +36,11 @@ re: fclean all
 
 .PHONY: all clean fclean re
 
-%.o: %.c $(INCLUDE)
-	@$(CC) -c $< -o $@
+%.o: %.c
+	@$(CC) -c $< -o $@ $(INCLUDE)
 	@echo "- File '$<' compiled."
 
 # Testing rules
-bfclean: fclean
-	@$(RM) -r $(RESULTS)
-	@echo "Folder '$(RESULTS)' removed"
-
 see:
 	@echo "Library	:	$(LIBRARY)"
 	@echo "Testers	:	$(TESTERS)"

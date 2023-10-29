@@ -1,54 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   que_stats.c                                        :+:      :+:    :+:   */
+/*   dll_stats.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/06/27 14:16:28 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/01/23 11:56:54 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "datalib.h"
 
-int	que_empty(t_queue *queue)
+int	dll_empty(t_dlist *list)
 {
-	return (queue == NULL);
+	return (list == NULL);
 }
 
-int	que_size(t_queue *queue)
+int	dll_size(t_dlist *list)
 {
 	int	i;
 
 	i = 0;
-	while (queue)
+	while (list)
 	{
-		queue = queue->next;
+		list = list->next;
 		i++;
 	}
 	return (i);
 }
 
-t_queue	*que_first(t_queue *queue)
+t_dlist	*dll_first(t_dlist *list)
 {
-	return (queue);
+	while (list && list->prev)
+		list = list->prev;
+	return (list);
 }
 
-t_queue	*que_last(t_queue *queue)
+t_dlist	*dll_last(t_dlist *list)
 {
-	while (queue && queue->next)
-		queue = queue->next;
-	return (queue);
+	while (list && list->next)
+		list = list->next;
+	return (list);
 }
 
-t_queue	*que_search(t_queue *queue, void *data)
+t_dlist	*dll_search(t_dlist *list, void *data)
 {
-	while (queue)
+	while (list)
 	{
-		if (queue->data == data)
-			return (queue);
-		queue = queue->next;
+		if (list->data == data)
+			return (list);
+		list = list->next;
 	}
 	return (NULL);
 }
