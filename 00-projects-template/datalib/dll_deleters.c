@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2024/05/07 21:23:49 by alvaquer         ###   ########.fr       */
+/*   Updated: 2024/05/07 21:24:50 by alvaquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,14 @@ void	dll_purge(t_dlist **list, void *data)
 
 void	dll_clear(t_dlist **list)
 {
-	// TODO
+	t_dlist	*aux;
+
+	if (dll_empty(*list))
+		return ;
+	while (*list)
+	{
+		aux = *list;
+		*list = (*list)->next;
+		free(aux);
+	}
 }
