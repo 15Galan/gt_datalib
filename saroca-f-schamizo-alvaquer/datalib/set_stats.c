@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:20:09 by antgalan          #+#    #+#             */
-/*   Updated: 2024/05/07 21:09:15 by schamizo         ###   ########.fr       */
+/*   Updated: 2024/05/07 21:10:44 by schamizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,13 @@ int	set_empty(t_set *set)
 
 int	set_contains(t_set *set, void *data)
 {
-	// TODO
+	while (set)
+	{
+		if (set->data == data)
+			return (1);
+		set = set->next;
+	}
+	return (0);
 }
 
 int	set_subset(t_set *set1, t_set *set2)
