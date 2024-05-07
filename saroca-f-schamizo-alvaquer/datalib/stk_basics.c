@@ -6,7 +6,7 @@
 /*   By: saroca-f <saroca-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2024/05/07 20:26:08 by saroca-f         ###   ########.fr       */
+/*   Updated: 2024/05/07 20:56:28 by saroca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,23 @@ t_stack	*stk_new(void *data)
 {
 	t_stack	*new;
 
-	new = NULL;
-	new = malloc(sizeof(t_stack));
-	if (!new)
+	new = (t_stack *) malloc(sizeof(t_stack));
+	if (new == NULL)
 		return (NULL);
-	if (new)
-	{
-		new->data = data;
-		new->next = NULL;
-	}
+	new->data = data;
+	new->next = NULL;
 	return (new);
 }
 
 void	stk_push(t_stack **stack, void *data)
 {
-	// TODO
+	t_stack	*new;
+
+	new = stk_new(data);
+	if (new == NULL)
+		return ;
+	new->next = *stack;
+	*stack = new;
 }
 
 t_stack	*stk_pop(t_stack **stack)
