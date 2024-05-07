@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2024/05/07 21:27:58 by alvaquer         ###   ########.fr       */
+/*   Updated: 2024/05/07 21:29:32 by alvaquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,15 @@ int	dll_empty(t_dlist *list)
 
 int	dll_size(t_dlist *list)
 {
-	// TODO
+	int	i;
+
+	i = 0;
+	while (list)
+	{
+		list = list->next;
+		i++;
+	}
+	return (i);
 }
 
 t_dlist	*dll_first(t_dlist *list)
