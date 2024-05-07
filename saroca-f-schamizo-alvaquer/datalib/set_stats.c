@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:20:09 by antgalan          #+#    #+#             */
-/*   Updated: 2024/05/07 21:16:29 by schamizo         ###   ########.fr       */
+/*   Updated: 2024/05/07 21:18:19 by schamizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,13 @@ int	set_equal(t_set *set1, t_set *set2)
 
 int	set_size(t_set *set)
 {
-	// TODO
+	int	i;
+
+	i = 0;
+	while (set)
+	{
+		i++;
+		set = set->next;
+	}
+	return (i);
 }
