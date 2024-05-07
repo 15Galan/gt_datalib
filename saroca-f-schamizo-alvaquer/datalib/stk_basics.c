@@ -6,7 +6,7 @@
 /*   By: saroca-f <saroca-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2024/05/07 21:01:36 by saroca-f         ###   ########.fr       */
+/*   Updated: 2024/05/07 21:04:26 by saroca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,12 @@ t_stack	*stk_pop(t_stack **stack)
 
 void	stk_clear(t_stack **stack)
 {
-	// TODO
+	t_stack	*aux;
+
+	while (*stack != NULL)
+	{
+		aux = *stack;
+		*stack = (*stack)->next;
+		free(aux);
+	}
 }
