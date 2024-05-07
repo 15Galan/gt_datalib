@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2024/05/07 21:33:33 by alvaquer         ###   ########.fr       */
+/*   Updated: 2024/05/07 21:35:18 by alvaquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,54 @@ t_dlist	*dll_new(void *data)
 
 void	dll_add_first(t_dlist **list, t_dlist *elem)
 {
-	// TODO
+	if (dll_empty(*list))
+		*list = elem;
+	else
+	{
+		elem->next = *list;
+		(*list)->prev = elem;
+		*list = elem;
+	}
 }
 
 void	dll_add_after(t_dlist *elem, t_dlist *new)
 {
-	// TODO
+	if (dll_empty(elem) || dll_empty(new))
+		return ;
+	new->next = elem->next;
+	new->prev = elem;
+	if (elem->next)
+		elem->next->prev = new;
+	elem->next = new;
 }
 
 void	dll_add_last(t_dlist **list, t_dlist *elem)
 {
-	// TODO
+	t_dlist	*last;
+
+	if (dll_empty(*list))
+		*list = elem;
+	else
+	{
+		last = dll_last(*list);
+		last->next = elem;
+		elem->prev = last;
+	}
 }
 
 t_dlist	*dll_replace(t_dlist *elem, void *data)
 {
-	// TODO
+	t_dlist	*new;
+
+	new = dll_new(data);
+	if (!new)
+		return (NULL);
+	if (elem->prev)
+		elem->prev->next = new;
+	if (elem->next)
+		elem->next->prev = new;
+	new->prev = elem->prev;
+	new->next = elem->next;
+	free(elem);
+	return (new);
 }
