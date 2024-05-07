@@ -6,7 +6,7 @@
 /*   By: saroca-f <saroca-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2024/05/07 21:10:26 by saroca-f         ###   ########.fr       */
+/*   Updated: 2024/05/07 21:12:11 by saroca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ t_stack	*stk_top(t_stack *stack)
 
 void	*stk_peek(t_stack *stack)
 {
-	// TODO
+	if (stk_empty(stack))
+		return (NULL);
+	return (stack->data);
 }
