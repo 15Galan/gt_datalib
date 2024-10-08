@@ -6,7 +6,7 @@
 /*   By: albmarqu <albmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2024/10/08 17:41:33 by albmarqu         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:42:02 by albmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,16 @@ void	dll_add_after(t_dlist *elem, t_dlist *new)
 
 void	dll_add_last(t_dlist **list, t_dlist *elem)
 {
-	// TODO
+	t_dlist	*last;
+
+	if (dll_empty(*list))
+		*list = elem;
+	else
+	{
+		last = dll_last(*list);
+		last->next = elem;
+		elem->prev = last;
+	}
 }
 
 t_dlist	*dll_replace(t_dlist *elem, void *data)
