@@ -6,7 +6,7 @@
 /*   By: glopez-c <glopez-c@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2024/10/08 17:09:32 by glopez-c         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:09:54 by glopez-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,12 @@ t_stack	*stk_pop(t_stack **stack)
 
 void	stk_clear(t_stack **stack)
 {
-	// TODO
+	t_stack	*aux;
+
+	while (*stack != NULL)
+	{
+		aux = *stack;
+		*stack = (*stack)->next;
+		free(aux);
+	}
 }
