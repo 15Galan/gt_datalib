@@ -6,7 +6,7 @@
 /*   By: glopez-c <glopez-c@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 20:44:57 by antgalan          #+#    #+#             */
-/*   Updated: 2024/10/08 17:38:23 by glopez-c         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:38:53 by glopez-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,14 @@ t_set	*set_new(void *data)
 
 void	set_add(t_set **set, void *data)
 {
-	// TODO
+	t_set	*new;
+
+	new = set_new(data);
+	if (!new || set_contains(*set, data))
+		return ;
+	while (*set)
+		set = &(*set)->next;
+	*set = new;
 }
 
 void	set_remove(t_set **set, void *data)
