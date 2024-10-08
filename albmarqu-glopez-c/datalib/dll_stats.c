@@ -6,7 +6,7 @@
 /*   By: albmarqu <albmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2024/10/08 17:45:36 by albmarqu         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:45:56 by albmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,15 @@ int	dll_empty(t_dlist *list)
 
 int	dll_size(t_dlist *list)
 {
-	// TODO
+	int	i;
+
+	i = 0;
+	while (list)
+	{
+		list = list->next;
+		i++;
+	}
+	return (i);
 }
 
 t_dlist	*dll_first(t_dlist *list)
