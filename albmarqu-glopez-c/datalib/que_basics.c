@@ -6,7 +6,7 @@
 /*   By: albmarqu <albmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2024/10/08 17:08:22 by albmarqu         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:09:26 by albmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,16 @@ void	que_enqueue(t_queue **queue, void *data)
 
 void	*que_dequeue(t_queue **queue)
 {
+	t_queue	*aux;
+	void	*data;
 
+	if (que_empty(*queue))
+		return (NULL);
+	aux = *queue;
+	*queue = (*queue)->next;
+	data = aux->data;
+	free(aux);
+	return (data);
 }
 
 void	que_clear(t_queue **queue)
