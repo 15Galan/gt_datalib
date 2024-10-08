@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dll_creators.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: albmarqu <albmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/03/07 20:45:47 by antgalan         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:40:26 by albmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,15 @@
 
 t_dlist	*dll_new(void *data)
 {
-	// TODO
+	t_dlist	*new;
+
+	new = (t_dlist *) malloc(sizeof(t_dlist));
+	if (!new)
+		return (NULL);
+	new->data = data;
+	new->next = NULL;
+	new->prev = NULL;
+	return (new);
 }
 
 void	dll_add_first(t_dlist **list, t_dlist *elem)
