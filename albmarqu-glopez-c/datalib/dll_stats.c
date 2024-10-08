@@ -6,7 +6,7 @@
 /*   By: albmarqu <albmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2024/10/08 17:46:27 by albmarqu         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:46:42 by albmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,11 @@ t_dlist	*dll_last(t_dlist *list)
 
 t_dlist	*dll_search(t_dlist *list, void *data)
 {
-	// TODO
+	while (list)
+	{
+		if (list->data == data)
+			return (list);
+		list = list->next;
+	}
+	return (NULL);
 }
