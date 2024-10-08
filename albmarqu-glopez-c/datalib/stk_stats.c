@@ -6,7 +6,7 @@
 /*   By: glopez-c <glopez-c@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2024/10/08 17:23:18 by glopez-c         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:23:30 by glopez-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ t_stack	*stk_top(t_stack *stack)
 
 void	*stk_peek(t_stack *stack)
 {
-	// TODO
+	if (stk_empty(stack))
+		return (NULL);
+	return (stack->data);
 }
