@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stk_stats.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: glopez-c <glopez-c@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 12:09:21 by antgalan         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:21:52 by glopez-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	stk_empty(t_stack *stack)
 {
-	// TODO
+	return (stack == NULL);
 }
 
 int	stk_size(t_stack *stack)
