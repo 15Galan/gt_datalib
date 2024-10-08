@@ -6,7 +6,7 @@
 /*   By: glopez-c <glopez-c@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:20:09 by antgalan          #+#    #+#             */
-/*   Updated: 2024/10/08 17:45:49 by glopez-c         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:46:16 by glopez-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ int	set_subset(t_set *set1, t_set *set2)
 
 int	set_equal(t_set *set1, t_set *set2)
 {
-	// TODO
+	if (set_size(set1) != set_size(set2))
+		return (0);
+	return (set_subset(set1, set2));
 }
 
 int	set_size(t_set *set)
