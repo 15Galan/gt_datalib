@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dll_creators.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: albmarqu <albmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2024/05/07 21:35:18 by alvaquer         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:42:23 by albmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

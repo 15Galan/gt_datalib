@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dll_stats.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: albmarqu <albmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2024/05/07 21:31:34 by alvaquer         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:46:42 by albmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
